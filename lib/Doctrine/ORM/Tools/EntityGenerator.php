@@ -451,9 +451,9 @@ public function <methodName>()
             } else if ($token[0] == T_FUNCTION) {
                 if ($tokens[$i+2][0] == T_STRING) {
                     $this->_staticReflection[$lastSeenClass]['methods'][] = $tokens[$i+2][1];
-                } else if ($tokens[$i+2][0] == T_AMPERSAND && $tokens[$i+3][0] == T_STRING) {
+                } /*else if ($tokens[$i+2][0] == T_AMPERSAND && $tokens[$i+3][0] == T_STRING) {
                     $this->_staticReflection[$lastSeenClass]['methods'][] = $tokens[$i+3][1];
-                }
+                } */
             } else if (in_array($token[0], array(T_VAR, T_PUBLIC, T_PRIVATE, T_PROTECTED)) && $tokens[$i+2][0] != T_FUNCTION) {
                 $this->_staticReflection[$lastSeenClass]['properties'][] = substr($tokens[$i+2][1], 1);
             }
